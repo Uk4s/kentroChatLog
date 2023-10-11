@@ -125,7 +125,7 @@ async function main(clientSystem, queueId, apiKey, chatId, id) {
                 atendimento.push(
                   `[${hora}] - ${clientName}: <br> Nome do arquivo: ${
                     chat.messages[i].file_name
-                  } <video width="380" height="300"controls> <source src='${await getURL(clientSystem, queueId, apiKey,
+                  } <video width='380' height='300'controls> <source src='${await getURL(clientSystem, queueId, apiKey,
                     chat.messages[i].fk_file
                   )}'></video>`
                 );
@@ -195,7 +195,7 @@ async function main(clientSystem, queueId, apiKey, chatId, id) {
                 atendimento.push(
                   `[${hora}] - Atendente: <br> Nome do arquivo: ${
                     chat.messages[i].file_name
-                  } <video width="380" height="300"controls> <source src='${await getURL(clientSystem, queueId, apiKey,
+                  } <video width='380' height='300'controls> <source src='${await getURL(clientSystem, queueId, apiKey,
                     chat.messages[i].fk_file
                   )}'></video>`
                 );
@@ -269,7 +269,8 @@ async function chat(clientSystem, queueId, apiKey, chatId, id){
     chat += `${conversas[i]} `;
   }
   console.log(chat);
-  return chat;
+  const chatFormatado = chat.replace(/"/g, "'");
+  return chatFormatado;
 }
 chat(clientSystem, queueId, apiKey, chatId, id)
 .then((chat) => {
